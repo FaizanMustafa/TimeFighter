@@ -14,7 +14,6 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 
-
 class MainActivity : AppCompatActivity() {
 
     internal lateinit var tapMeButton: Button
@@ -33,8 +32,6 @@ class MainActivity : AppCompatActivity() {
         private val TIME_LEFT_KEY = "TIME_LEFT_KEY"
     }
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -43,7 +40,6 @@ class MainActivity : AppCompatActivity() {
         tapMeButton = findViewById<Button>(R.id.tap_me_button)
         gameScoreTextView = findViewById<TextView>(R.id.game_score_text_view)
         timeLeftTextView = findViewById<TextView>(R.id.time_left_text_view)
-
 
         if (savedInstanceState != null){
             score = savedInstanceState.getInt(SCORE_KEY)
@@ -92,14 +88,6 @@ class MainActivity : AppCompatActivity() {
         countDownTimer.cancel()
         Log.d(TAG, "onSaveInstanceState: Saving Score: $score & Time Left: $timeLeftOnTimer")
     }
-
-        /*super.onSaveInstanceState(outState)
-
-        outState?.putInt(SCORE_KEY, score)
-        outState?.putLong(TIME_LEFT_KEY, timeLeftOnTimer)
-        countDownTimer.cancel()
-        Log.d(TAG, "onSaveInstanceState: Saving Score: $score & Time Left: $timeLeftOnTimer")
-    }*/
 
     override fun onDestroy() {
         super.onDestroy()
